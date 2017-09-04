@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.flueky.getpicture.MainActivity">
+
+    <Button
+        android:id="@+id/main_btn_take_picture_crop"
+        android:layout_width="match_parent"
+        android:onClick="onClick"
+        android:layout_height="wrap_content"
+        android:text="拍照(裁剪)" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/main_btn_read_album_crop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="相册(裁剪)" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/main_btn_take_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照(不裁剪)" />
+
+    <Button
+        android:id="@+id/main_btn_read_album_single"
+        android:layout_width="match_parent"
+        android:onClick="onClick"
+        android:layout_height="wrap_content"
+        android:text="相册(不裁剪)" />
+
+    <Button
+        android:id="@+id/main_btn_read_album_more"
+        android:layout_width="match_parent"
+        android:onClick="onClick"
+        android:layout_height="wrap_content"
+        android:text="相册(多张)" />
+
+    <TextView
+        android:id="@+id/main_tv_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/main_iv_picture"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+</LinearLayout>
