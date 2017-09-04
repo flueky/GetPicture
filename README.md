@@ -23,5 +23,8 @@
 ![](https://github.com/flueky/GetPicture/blob/master/Screenshot_20170904-170931.png)
 
 
+**由于这里裁剪是目的是做用户图像，因此压缩处理过。**
+
+
 
 
