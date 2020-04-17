@@ -1,64 +1,47 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven'
+// 加载其他的 gradle 配置文件，可选
+apply from: "config.gradle"
 
-android {
-
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
-    defaultConfig {
-        // 最小 sdk 版本，低于此 Android 版本的手机不能安装
-        minSdkVersion rootProject.ext.minSdkVersion
-        // 目标 sdk 版本，低于此 Android 版本的手机完美兼容，高于此 Android 版本的手机，部分特性不能使用
-        // 升级 target 需要针对高版本做兼容。
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        // 应用版本号，覆盖安装时，升级版本依据
-        versionCode rootProject.ext.album.versionCode
-        // 版本名称，
-        versionName rootProject.ext.album.versionName
+buildscript {
+    repositories {
+        //  仓库地址
+        google()
+        jcenter()
+        mavenCentral()
+    }
+//    工程的依赖配置
+    dependencies {
+        // 必须包含的 gradle 版本的构建工具。
+        classpath 'com.android.tools.build:gradle:3.4.1'
     }
 }
 
-dependencies {
-//    implementation rootProject.ext.dependencies.support_v4
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.flueky.android:basic-frame:1.0.1'
+// 全部工程配置，作用于每个 Module
+allprojects {
+    repositories {
+        // 工程目录仓库
+        maven { url 'file://' + rootDir.getAbsolutePath() + '/repository/' }
 
-    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+        //  仓库地址
+        google()
+        jcenter()
+        mavenCentral()
+
+    }
 }
 
-// 远程库名称通常由三部分构成 ，groupId:artifactId:version
-// 定义 group
-group = 'com.flueky.android'
-// 定义 version
-version = rootProject.ext.album.versionName // 指定版本
-// artifactId 默认使用 module name
+// 扩展变量，用于统一管理每个 Module 的有关配置
+ext {
+    // 应用 id
+    applicationId = "com.flueky.demo"
+    // 统一控制各个 Module 使用的 SDK 版本
+    compileSdkVersion = 26
+    buildToolsVersion = "28.0.3"
+    minSdkVersion = 19
+    targetSdkVersion = 26
 
-// 以上两个配置也可以在下面的 deployer 中定义
-
-// 下面定义三种不同的 maven 仓库地址
-// 1. 计算机中，用户目录下
-def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
-// 2. 工程目录下
-def projectMavenRepo = 'file://' + rootDir.getAbsolutePath() + '/repository' // 等同 uri('../repository')
-// 3. 自建的 Maven 私服上
-def nexusMavenRepo = 'http://127.0.0.1:9000/repository/android/'
-// 下面是 Maven 私服的用户名和密码，上传时需要
-def nexusUserName = 'admin'
-def nexusPassword = 'admin123'
-
-uploadArchives {
-    repositories.mavenDeployer {
-        // 指定导出到的仓库地址，三个任选一个
-//        repository(url: localMavenRepo)
-        repository(url: projectMavenRepo)
-//        repository(url: nexusMavenRepo) {
-//            // 需要授权用户名和密码
-//            authentication(userName: nexusUserName, password: nexusPassword)
-//        }
-        // 下面三个定义的常量可以复写上面已定义的值
-//        pom.groupId = "com.flueky.android"// 唯一标识（通常为模块包名，也可以任意）
-//        pom.artifactId = "android-album" // 项目名称（通常为类库模块名称，也可以任意）
-//        pom.version = "1.0.0" // 版本号
-    }
+    // 定义 Module 的版本号
+    app = [
+            versionCode: 1,
+            versionName: '1.0.0'
+    ]
 }

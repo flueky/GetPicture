@@ -1,0 +1,7 @@
+include ':sample'
+include ':library'
+
+//include ':basic-frame'
+//project(':basic-frame').projectDir = new File(rootDir, "../basic-frame")
+//include ':screen-size'
+//project(':screen-size').projectDir = new File(rootDir, "../screen-size")
