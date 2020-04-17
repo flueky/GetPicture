@@ -1,7 +1,7 @@
+.gradle
+.idea
+build
+repository
 *.iml
-.DS_Store
-.idea/
-.gradle/
-/build
-/captures
-.externalNativeBuild
+local.properties
+keystore.properties

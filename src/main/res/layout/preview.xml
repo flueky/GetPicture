@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/preview_vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_90_w"
+        android:background="#66666666">
+
+        <View
+            android:id="@+id/preview_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#00000000" />
+
+        <Button
+            android:layout_below="@id/preview_title"
+            android:id="@+id/preview_btn_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:text="照片"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_30_w" />
+
+        <TextView
+            android:layout_below="@id/preview_title"
+            android:id="@+id/preview_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_34_w" />
+
+        <CheckBox
+            android:layout_below="@id/preview_title"
+            android:id="@+id/preview_cb_choose"
+            android:layout_width="@dimen/dp_34_w"
+            android:layout_height="@dimen/dp_34_w"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_15_w"
+            android:background="@drawable/pic_cb_check_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_24_w" />
+    </RelativeLayout>
+
+</RelativeLayout>

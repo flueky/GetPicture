@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.flueky.android.album">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application>
+        <activity
+            android:name=".AlbumListActivity"
+            android:theme="@style/FFAppTheme.NoTitleBar" />
+        <activity
+            android:name=".PictureListActivity"
+            android:exported="false"
+            android:theme="@style/FFAppTheme.NoTitleBar">
+            <intent-filter>
+                <action android:name="${applicationId}.READ_ALBUM" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PreviewActivity"
+            android:theme="@style/FFAppTheme.NoTitleBar" />
+    </application>
+</manifest>

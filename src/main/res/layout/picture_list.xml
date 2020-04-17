@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/picture_list_ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_90_w"
+        android:background="@color/album_primary_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/picture_list_btn_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="相册"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_30_w" />
+
+        <TextView
+            android:id="@+id/picture_list_tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_34_w" />
+
+        <Button
+            android:id="@+id/picture_list_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="取消"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_30_w" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/picture_list_gv_pics"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#efeff5"
+        android:horizontalSpacing="@dimen/dp_10_w"
+        android:numColumns="4"
+        android:padding="@dimen/dp_10_w"
+        android:verticalSpacing="@dimen/dp_10_w"></GridView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_90_w"
+        android:background="#FFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_20_w"
+        android:paddingRight="@dimen/dp_20_w">
+
+        <TextView
+            android:id="@+id/picture_list_txt_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10_w"
+            android:text="预览"
+            android:textColor="@drawable/picture_list_txt_preview_selector"
+            android:textSize="@dimen/dp_28_w" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/picture_list_txt_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/picture_list_btn_done_shape"
+            android:padding="@dimen/dp_10_w"
+            android:text="完成"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_28_w" />
+    </LinearLayout>
+
+</LinearLayout>

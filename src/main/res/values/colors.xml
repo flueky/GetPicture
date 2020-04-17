@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="album_primary_color">#e9533d</color>
+    <color name="album_secondary_color">#f06d48</color>
+<!--    <color name="album_primary_color">#4e9ce9</color>-->
+<!--    <color name="album_secondary_color">#0fb8f6</color>-->
+</resources>
